@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import CardList from "./CardList";
-import SearchBox from "./SearchBox";
-import Scroll from "./Scroll";
+import CardList from "../components/CardList";
+import SearchBox from "../components/SearchBox";
+import Scroll from "../components/Scroll";
 import "./App.css";
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
     const value = event.target.value;
     setSearch(value);
 
-    if (value.trim().length !== 0) {
+    if (value.trim().length) {
       const searchedRobots = robotList.filter((robot) =>
         robot.name.toLowerCase().includes(value.toLowerCase())
       );
@@ -34,7 +34,7 @@ const App = () => {
     }
   };
 
-  if (robotList.length === 0) return <h1>Loading...</h1>;
+  if (!robotList.length) return <h1>Loading...</h1>;
   return (
     <div className="tc">
       <h1 className="f1">RoboFriends</h1>
