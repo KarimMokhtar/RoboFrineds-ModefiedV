@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from "react";
 import CardList from "./CardList";
 import SearchBox from "./SearchBox";
-import { robots } from "./robots";
+import Scroll from "./Scroll";
 import "./App.css";
 
 const App = () => {
   const [search, setSearch] = useState("");
-  const [robotList, setRobotList] = useState(robots);
+  const [robotList, setRobotList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((res) => res.json())
+      .then((res) => {
+        setFilteredList(res);
+        setRobotList(res);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleSearch = (event) => {
     const value = event.target.value;
@@ -17,16 +28,20 @@ const App = () => {
         robot.name.toLowerCase().includes(value.toLowerCase())
       );
 
-      setRobotList(searchedRobots);
+      setFilteredList(searchedRobots);
     } else {
-      setRobotList(robots);
+      setFilteredList(robotList);
     }
   };
+
+  if (robotList.length === 0) return <h1>Loading...</h1>;
   return (
     <div className="tc">
-      <h1 className='f1'>RoboFriends</h1>
+      <h1 className="f1">RoboFriends</h1>
       <SearchBox onSearchChange={handleSearch} search={search} />
-      <CardList robots={robotList} />
+      <Scroll>
+        <CardList robots={filteredList} />
+      </Scroll>
     </div>
   );
 };
