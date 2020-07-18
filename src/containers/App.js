@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import CardList from "../components/CardList";
@@ -7,47 +7,42 @@ import Scroll from "../components/Scroll";
 import ErrorBoundry from "../components/ErrorBoundry";
 import "./App.css";
 
-import { setSearchField } from "../actions";
+import { setSearchField, requestRobots } from "../actions";
 
 const App = () => {
-  const [robotList, setRobotList] = useState([]);
-  const [filteredList, setFilteredList] = useState([]);
-
   const searchField = useSelector((state) => state.searchRobots.searchField);
+  const { robots, isPending } = useSelector((state) => state.requestRobots);
   const dispatch = useDispatch();
 
+  const loadRobots = useCallback(async () => {
+    await dispatch(requestRobots());
+  }, [dispatch]);
+
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((res) => {
-        setFilteredList(res);
-        setRobotList(res);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    loadRobots();
+  }, [loadRobots]);
 
   const handleSearch = (event) => {
     const value = event.target.value;
     dispatch(setSearchField(value));
-
-    if (value.trim().length) {
-      const searchedRobots = robotList.filter((robot) =>
-        robot.name.toLowerCase().includes(value.toLowerCase())
-      );
-      setFilteredList(searchedRobots);
-    } else {
-      setFilteredList(robotList);
-    }
   };
+  if (isPending) return <h1>Loading...</h1>;
 
-  if (!robotList.length) return <h1>Loading...</h1>;
+  let searchedRobots = [];
+  if (searchField.trim().length) {
+    searchedRobots = robots.filter((robot) =>
+      robot.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+  } else {
+    searchedRobots = [...robots];
+  }
   return (
     <div className="tc">
       <h1 className="f1">RoboFriends</h1>
       <SearchBox onSearchChange={handleSearch} search={searchField} />
       <Scroll>
         <ErrorBoundry>
-          <CardList robots={filteredList} />
+          <CardList robots={searchedRobots} />
         </ErrorBoundry>
       </Scroll>
     </div>
