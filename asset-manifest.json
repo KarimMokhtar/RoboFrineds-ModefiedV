@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/RoboFrineds-ModefiedV/static/css/main.05510d95.chunk.css",
+    "main.css": "/RoboFrineds-ModefiedV/static/css/main.e189798b.chunk.css",
     "main.js": "/RoboFrineds-ModefiedV/static/js/main.3cff504f.chunk.js",
     "main.js.map": "/RoboFrineds-ModefiedV/static/js/main.3cff504f.chunk.js.map",
     "runtime-main.js": "/RoboFrineds-ModefiedV/static/js/runtime-main.5eaff0b5.js",
@@ -9,10 +9,10 @@
     "static/js/2.966b1d21.chunk.js": "/RoboFrineds-ModefiedV/static/js/2.966b1d21.chunk.js",
     "static/js/2.966b1d21.chunk.js.map": "/RoboFrineds-ModefiedV/static/js/2.966b1d21.chunk.js.map",
     "index.html": "/RoboFrineds-ModefiedV/index.html",
-    "precache-manifest.033034a17f183e4bc20a16e26941bf82.js": "/RoboFrineds-ModefiedV/precache-manifest.033034a17f183e4bc20a16e26941bf82.js",
+    "precache-manifest.846becf70582087591574db69d2ccbb8.js": "/RoboFrineds-ModefiedV/precache-manifest.846becf70582087591574db69d2ccbb8.js",
     "service-worker.js": "/RoboFrineds-ModefiedV/service-worker.js",
     "static/css/2.3c03f26f.chunk.css.map": "/RoboFrineds-ModefiedV/static/css/2.3c03f26f.chunk.css.map",
-    "static/css/main.05510d95.chunk.css.map": "/RoboFrineds-ModefiedV/static/css/main.05510d95.chunk.css.map",
+    "static/css/main.e189798b.chunk.css.map": "/RoboFrineds-ModefiedV/static/css/main.e189798b.chunk.css.map",
     "static/js/2.966b1d21.chunk.js.LICENSE.txt": "/RoboFrineds-ModefiedV/static/js/2.966b1d21.chunk.js.LICENSE.txt",
     "static/media/App.css": "/RoboFrineds-ModefiedV/static/media/SEGA.12a3db8b.woff"
   },
@@ -20,7 +20,7 @@
     "static/js/runtime-main.5eaff0b5.js",
     "static/css/2.3c03f26f.chunk.css",
     "static/js/2.966b1d21.chunk.js",
-    "static/css/main.05510d95.chunk.css",
+    "static/css/main.e189798b.chunk.css",
     "static/js/main.3cff504f.chunk.js"
   ]
 }
