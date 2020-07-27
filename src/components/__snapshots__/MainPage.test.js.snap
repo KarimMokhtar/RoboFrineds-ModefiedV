@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main component tests filters robots pending 1`] = `
+"<h1>
+  Loading...
+</h1>"
+`;
+
+exports[`Main component tests renders main page 1`] = `
+"<div className=\\"tc\\">
+  <Memo() />
+  <SearchBox onSearchChange={[Function: mockConstructor]} />
+  <Scroll>
+    <ErrorBoundary>
+      <CardList robots={{...}} />
+    </ErrorBoundary>
+  </Scroll>
+</div>"
+`;
