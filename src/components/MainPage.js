@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
@@ -7,9 +7,6 @@ import Header from "../components/Header";
 import ErrorBoundry from "../components/ErrorBoundry";
 
 class MainPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.loadRobots();
   }

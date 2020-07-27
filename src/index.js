@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 const logger = createLogger();
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware)
+  applyMiddleware(thunkMiddleware,logger)
 );
 
 ReactDOM.render(
