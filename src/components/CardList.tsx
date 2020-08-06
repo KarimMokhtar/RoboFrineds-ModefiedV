@@ -1,7 +1,10 @@
 import React from "react";
 import Card from "./Card";
 
-const CardList = ({ robots }) => {
+interface ICardList {
+  robots:Array<any>
+}
+const CardList = ({ robots }:ICardList) => {
   return (
     <div>
       {robots.map((robot) => (
