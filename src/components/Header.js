@@ -1,13 +1,13 @@
-import React from "react";
-import CounterButton from "./CounterButton";
+import React from 'react';
+import CounterButton from './CounterButton';
 
 const Header = React.memo(() => {
-  console.log("header");
+  console.log('header');
 
   return (
     <>
       <h1 className="f1">RoboFriends</h1>
-      <CounterButton color={'red'}/>
+      <CounterButton color={'red'} />
     </>
   );
 });

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import CardList from "../components/CardList";
-import SearchBox from "../components/SearchBox";
-import Scroll from "../components/Scroll";
-import Header from "../components/Header";
-import ErrorBoundry from "../components/ErrorBoundry";
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import Scroll from '../components/Scroll';
+import Header from '../components/Header';
+import ErrorBoundry from '../components/ErrorBoundry';
 
 class MainPage extends React.Component {
   componentDidMount() {
@@ -20,7 +20,7 @@ class MainPage extends React.Component {
     if (isPending) return <h1>Loading...</h1>;
     let searchedRobots = [];
     if (searchField.trim().length) {
-        searchedRobots = this.filterRobots();
+      searchedRobots = this.filterRobots();
     } else {
       searchedRobots = [...robots];
     }

@@ -1,10 +1,10 @@
-import React from "react";
-import Card from "./Card";
+import React from 'react';
+import Card from './Card';
 
 interface ICardList {
-  robots:Array<any>
+  robots: Array<any>;
 }
-const CardList = ({ robots }:ICardList) => {
+const CardList: React.FC<ICardList> = ({ robots }) => {
   return (
     <div>
       {robots.map((robot) => (
