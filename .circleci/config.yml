@@ -16,9 +16,10 @@ jobs:
     docker:
       - image: cimg/node:15.1
     steps:
-      - run:
-          name: Run tests
-          command: npm test
+      - checkout
+      - run: echo "running testing job"
+      - run: npm install
+      - run: npm test
   hithere:
     docker:
       - image: cimg/node:15.1
@@ -26,10 +27,11 @@ jobs:
       - checkout
       - run: echo "checking ts and linting and prettier"
 workflows:
+  version: 2.1
   build-and-test: 
     jobs:
       - build
       - hithere
       - test:
-        requires:
-          - hithere
+          requires:
+            - hithere
