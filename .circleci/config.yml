@@ -26,10 +26,11 @@ jobs:
       - checkout
       - run: echo "checking ts and linting and prettier"
 workflows:
+  version: 2.1
   build-and-test: 
     jobs:
       - build
       - hithere
       - test:
-        requires:
-          - hithere
+          requires:
+            - hithere
