@@ -18,7 +18,7 @@ jobs:
     steps:
       - run: echo "running testing job"
       - run: npm install
-      - run: npm start
+      - run: npm test
   hithere:
     docker:
       - image: cimg/node:15.1
