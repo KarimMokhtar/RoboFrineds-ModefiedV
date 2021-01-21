@@ -19,7 +19,7 @@ describe('set search field action', () => {
       payload: text,
       type: CHANGE_SEARCH_FIELD,
     };
-    expect(actions.setSearchField(text)).toEqual(expectedAction);
+    expect(setSearchField(text)).toEqual(expectedAction);
   });
 });
 
@@ -44,7 +44,7 @@ describe('request robots action', () => {
       },
     ];
     const store = mockStore({ robots: [] });
-    return store.dispatch(actions.requestRobots()).then(() => {
+    return store.dispatch(requestRobots()).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });
